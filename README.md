@@ -1,20 +1,26 @@
-# Tutzil: Object Detection and Tracking System
-Object detector for human assistance 
+# Tutzil: Object detector and tracker for human assistance 
+
+Tutzil is an advanced object detection and tracking system built upon the YOLOv8 model(more archtectures will be added later), integrated with a user interface created in Qt Creator that controls a 2DOF system.
 
 
+## Objectives
 
-Tutzil is an advanced object detection and tracking system built upon the YOLOv8 model by Ultralytics, integrated with a user interface created in Qt Creator. This project aims to develop a tracking assistant that interfaces with a two-degree-of-freedom system, featuring pan and tilt axes.
+Basically this is an artificial vision system controlling a two-degree-of-freedom robot, where the user selects an object on the screen, and the robotic system autonomously adjusts the camera to accurately point at the chosen object. The primary goal of this project is to create a reliable and efficient tracking assistant that can be used mainly in a security system with a 2 DOF robot but also as a camera stabilizer, the goal of this project is to mount it in a vehicle.
+
+## System Architecture 
+
+![Mi imagen](./Assets/System_arch.png)
+
+
 
 ## Features
 
-- **Object Detection**: Utilizes the YOLOv8 model for accurate and efficient object detection.
+- **Object Detection**: Utilizes the YOLOv8 model (different architectures will be added later)for accurate and efficient object detection, pose estimation and segmentation.
 - **Real-Time Tracking**: Tracks detected objects in real-time, ensuring smooth and responsive operation.
 - **User Interface**: A user-friendly interface built with Qt Creator, providing easy control and visualization.
 - **Pan and Tilt Control**: Integrates with a two-degree-of-freedom system for comprehensive tracking capabilities, allowing for precise control over pan (horizontal movement) and tilt (vertical movement) axes.
 
-## Objectives
 
-The primary goal of this project is to create a reliable and efficient tracking assistant that can be used in various applications, from security systems to automated camera setups.
 
 ## Getting Started
 
