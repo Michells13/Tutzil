@@ -11,6 +11,12 @@ Basically this is an artificial vision system controlling a two-degree-of-freedo
 
 ![Mi imagen](./Assets/System_arch.png)
 
+## Vision Module - Jetson Orin/Nano
+
+The vision module has been implemented on a separate device to maintain the autonomy of the UI system and to allocate the necessary resources for vision processing independently. Following this model, it will be easier to replace the embedded module with a more powerful system in the future, and it also allows for independent development of both the UI and vision modules.
+
+### Frameworks
+
 
 
 ## Features
