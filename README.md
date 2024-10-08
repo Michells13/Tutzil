@@ -2,9 +2,13 @@
 Object detector for human assistance 
 
 Tutzil is an advanced object detection and tracking system built upon the YOLOv8 model by Ultralytics, integrated with a user interface created in Qt Creator. This project aims to develop a tracking assistant that interfaces with a two-degree-of-freedom system, featuring pan and tilt axes as well as an extra actuator for multiple propuses.
-Basically this is an artificial vision system controlling a two-degree-of-freedom robot, where the user selects an object on the screen, and the robotic system autonomously adjusts the camera to accurately point at the chosen object.
 
-##System Architecture 
+
+## Objectives
+
+Basically this is an artificial vision system controlling a two-degree-of-freedom robot, where the user selects an object on the screen, and the robotic system autonomously adjusts the camera to accurately point at the chosen object. The primary goal of this project is to create a reliable and efficient tracking assistant that can be used mainly in a security system with a 2 DOF robot but also as a camera stabilizer.
+
+## System Architecture 
 
 ![Mi imagen](./Assets/System_arch.png)
 
@@ -17,9 +21,7 @@ Basically this is an artificial vision system controlling a two-degree-of-freedo
 - **User Interface**: A user-friendly interface built with Qt Creator, providing easy control and visualization.
 - **Pan and Tilt Control**: Integrates with a two-degree-of-freedom system for comprehensive tracking capabilities, allowing for precise control over pan (horizontal movement) and tilt (vertical movement) axes.
 
-## Objectives
 
-The primary goal of this project is to create a reliable and efficient tracking assistant that can be used mainly in a security system with a 2 DOF robot but also as a camera stabilizer.
 
 ## Getting Started
 
