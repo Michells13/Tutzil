@@ -5,7 +5,7 @@ Tutzil is an advanced object detection and tracking system built upon the YOLOv8
 
 ##System Architecture 
 <div align="center">
-  <img src="./assets/imagen.png" alt="Mi imagen" />
+  <img src="./Assets/imagen.png" alt="Mi imagen" />
 </div>
 
 
