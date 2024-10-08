@@ -4,9 +4,8 @@ Object detector for human assistance
 Tutzil is an advanced object detection and tracking system built upon the YOLOv8 model by Ultralytics, integrated with a user interface created in Qt Creator. This project aims to develop a tracking assistant that interfaces with a two-degree-of-freedom system, featuring pan and tilt axes.
 
 ##System Architecture 
-<div align="center">
-  <img src="./Assets/imagen.png" alt="Mi imagen" />
-</div>
+![Mi imagen](./Assets/System_arch.png)
+
 
 
 ## Features
