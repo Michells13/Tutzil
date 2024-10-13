@@ -1,4 +1,5 @@
-# Tutzil: Object detector and tracker for human assistance 
+# Tutzil: Object detector and tracker 
+## Human Assistance for Shooting 
 
 
 Tutzil is an advanced object detection and tracking system built upon the YOLOv8 model(more archtectures will be added later), integrated with a user interface created in Qt Creator that controls a 2DOF system.
