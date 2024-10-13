@@ -3,9 +3,15 @@
 
 Tutzil is an advanced object detection and tracking system built upon the YOLOv8 model(more archtectures will be added later), integrated with a user interface created in Qt Creator that controls a 2DOF system.
 
-| ![Concept](./Assets/concept.jpg) | ![Concept Screen](./Assets/conceptscreen.jpg) |
+
+<p align="center">
+  <img src="./Assets/concept.jpg" alt="Concept" width="400"/>
+  <img src="./Assets/conceptscreen.jpg" alt="Concept Screen" width="200"/>
+</p>
+
+| ![Concept](./Assets/conceptscreen.jpg) | ![Concept Screen](./Assets/concept.jpg) |
 |:--------------------------------:|:--------------------------------------------:|
-| Concept Image                    | Concept Screen Image                          |
+| Usage Concept                    | Display  First Concept                          |
 
 ## Objectives
 
