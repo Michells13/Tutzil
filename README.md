@@ -5,11 +5,11 @@ Tutzil is an advanced object detection and tracking system built upon the YOLOv8
 
 
 <p align="center">
-  <img src="./Assets/concept.jpg" alt="Concept" width="400"/>
-  <img src="./Assets/conceptscreen.jpg" alt="Concept Screen" width="200"/>
+  <img src="./Assets/concept.jpg" alt="Concept" width="100"/>
+  <img src="./Assets/conceptscreen.jpg" alt="Concept Screen" width="400"/>
 </p>
 
-| ![Concept](./Assets/conceptscreen.jpg) | ![Concept Screen](./Assets/concept.jpg) |
+| |
 |:--------------------------------:|:--------------------------------------------:|
 | Usage Concept                    | Display  First Concept                          |
 
