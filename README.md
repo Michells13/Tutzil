@@ -2,7 +2,7 @@
 ## Automated Target Tracking
 
 
-It is a system that uses computer vision to identify and track targets in real-time. The robotic assistance adjusts the orientation of a camera or shooting device to keep the target centered in the frame. It has been built upon the YOLOv8 model(more archtectures will be added later)on an embedded board integrated with a user interface created in Qt Creator that controls a 2DOF system.
+It is a system that uses computer vision to identify and track targets in real-time. The robotic assistance adjusts the orientation of a camera or shooting device to keep the target centered in the frame. It has been built upon the YOLOv8 model(more archtectures will be added later)on an embedded board integrated with a user interface created in Qt Creator.
 
 
 
