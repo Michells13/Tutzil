@@ -6,20 +6,6 @@ It is a system that uses computer vision to identify and track targets in real-t
 
 
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Vision Module](#data-packet-structure)
-  -Comms
-    - [Image Size](#image-size)
-    - [Encoded Image (JPEG)](#encoded-image-jpeg)
-    - [Detection Data (JSON)](#detection-data-json)
-    - [Packet Transmission](#packet-transmission)
-    - [Example Packet Structure](#example-packet-structure)
-- [Display Module](#client-requirements)
-- [Control Module](#dependencies)
-- [Running the Application](#running-the-application)
-- [Notes](#notes)
 <p align="center">
   <img src="./Assets/concept.jpg" alt="Concept" width="400"/>
   <img src="./Assets/conceptscreen.jpg" alt="Concept Screen" width="380"/>
@@ -29,6 +15,32 @@ It is a system that uses computer vision to identify and track targets in real-t
 
 
 | Usage Concept                    | Display  First Concept                          
+
+
+
+
+# Table of Contents
+
+- [Tutzil - ATT: Automated Target Tracking](#tutzil---att-automated-target-tracking)
+- [System Architecture](#system-architecture)
+- [Vision Module - Jetson Orin/Nano](#vision-module---jetson-orinnan)
+  - [Key Features](#key-features)
+    - [YOLOv8 Integration](#yolov8-integration)
+    - [Flexible Configuration](#flexible-configuration)
+    - [Inputs & Outputs](#inputs--outputs)
+    - [Modular Design](#modular-design)
+    - [Main Loop](#main-loop)
+    - [TCP/IP COMMS](#tcpip-comms)
+  - [Example Configurations](#example-configurations)
+- [UI Module](#ui-module)
+- [Control Module](#control-module)
+  - [Frameworks](#frameworks)
+- [Getting Started](#getting-started)
+  - [Clone the Repository](#clone-the-repository)
+  - [Install Dependencies](#install-dependencies)
+  - [Run the Application](#run-the-application)
+- [Contribution](#contribution)
+- [License](#license)
 
 
 ## System Architecture 
@@ -70,7 +82,66 @@ The vision module has been developed in Python using the PyTorch framework. Curr
    - In the main function, the camera captures frames, which are processed and analyzed using YOLOv8. The processed results can be send over a network using the TCP/IP server.
 
      
-- **TCP/IP COMMS**: 
+## TCP/IP Communication and Packet Transmission
+
+This module includes a TCP/IP communication system for transmitting processed image data and associated metadata between a vision module and a graphical interface module. Below is an overview of the key functions and processes involved:
+
+### Data Encoding and Transmission
+
+1. **Data Encoding**:
+    - **`encode_image_to_jpeg(frame, quality=90)`**: Encodes a given image frame into JPEG format with a specified quality (default is 90).
+    - **`convert_encoded_image_to_bytes(encoded_image)`**: Converts the encoded JPEG image into a stream of bytes for transmission.
+    - **`enconde_data_to_json(all_data)`**: Encodes detection results (bounding boxes, class IDs, track IDs) into JSON format for easy transmission.
+
+2. **Packet Construction**:
+    - **`send_packet_over_tcp(connection, string_data, json_data)`**: Constructs and sends a data packet over a TCP/IP connection. The packet includes:
+        - The size of the encoded image in bytes.
+        - The encoded JPEG image.
+        - JSON data containing bounding boxes, class IDs, and track IDs.
+
+    Data is packed using the `struct` library to ensure consistent size and format, helping maintain synchronization between the sender and receiver.
+
+3. **Timing Measurement**:
+    - Throughout the transmission process, time is measured to track the time taken for various steps (e.g., image encoding, JSON serialization, packet creation, and transmission). This helps in diagnosing latency and optimizing the communication.
+
+### TCP/IP Server
+
+The server listens for incoming connections, processes frames through the YOLOv8 model, and sends the results over the established connection.
+
+- **`start_server(model, device, config, camDevice)`**: This function initializes the YOLO model, starts the camera, and manages the communication loop:
+    - Listens for incoming connections.
+    - Receives commands to start or stop the vision module.
+    - Processes frames through YOLO and tracks objects.
+    - Encodes processed frames and metadata.
+    - Sends data packets over the TCP/IP connection.
+
+- **`process_frame`**: Handles YOLO inference on a frame, extracts tracking data, and prepares the image and metadata for transmission.
+
+### Packet Structure
+
+The packets sent over TCP/IP have the following structure:
+   1. **Image Data**: The size of the JPEG image followed by the image bytes.
+   2. **Metadata**: The size of the JSON data followed by the JSON string containing:
+       - **Track IDs**: A list of tracking IDs for detected objects.
+       - **Class IDs**: A list of class IDs corresponding to detected objects.
+       - **Normalized Bounding Boxes**: The coordinates of bounding boxes for each detected object, normalized to the image dimensions.
+
+### Error Handling and Timeout Management
+
+- The server uses a timeout mechanism to handle connection delays and timeouts during the wait for client connections.
+- If a connection is not established within a set number of attempts, the server terminates the communication.
+
+### Example Usage
+
+The following is an example of the server initialization:
+
+```python
+# Example server start with a YOLO model, camera device, and configuration parameters
+start_server(model, device, config, camDevice)
+```
+
+
+
 ### Example Configurations:
 
 - **Mode**: Inference (only)
@@ -83,13 +154,6 @@ The vision module has been developed in Python using the PyTorch framework. Curr
  
 
 ## Control Module
-
-### Frameworks
-
-
-
-
-
 
 
 ## Getting Started
