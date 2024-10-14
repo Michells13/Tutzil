@@ -22,7 +22,10 @@ It is a system that uses computer vision to identify and track targets in real-t
 
 ## Vision Module - Jetson Orin/Nano
 
-The vision module has been implemented on a separate device to maintain the autonomy of the UI system and to allocate the necessary resources for vision processing independently. Following this model, it will be easier to replace the embedded module with a more powerful system in the future, and it also allows for independent development of both the UI and vision modules.
+
+<small> Note: The vision module has been implemented on a separate device to maintain the autonomy of the UI system and to allocate the necessary resources for vision processing independently. Following this model, it will be easier to replace the embedded module with a more powerful system in the future, and it also allows for independent development of both the UI and vision modules.</small>
+
+The vision module has been developed in Python using the PyTorch framework. Currently, it implements the YOLOv8 model from Ultralytics, though the adaptation of other models is underway. The following sections describe the features and composition of this module, as well as define its inputs and output
 
 ## UI Module
  
