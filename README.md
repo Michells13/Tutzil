@@ -5,6 +5,21 @@
 It is a system that uses computer vision to identify and track targets in real-time. The robotic assistance adjusts the orientation of a camera or shooting device to keep the target centered in the frame. It has been built upon the YOLOv8 model(more archtectures will be added later)on an embedded board integrated with a user interface created in Qt Creator that controls a 2DOF system.
 
 
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Vision Module](#data-packet-structure)
+  -Comms
+    - [Image Size](#image-size)
+    - [Encoded Image (JPEG)](#encoded-image-jpeg)
+    - [Detection Data (JSON)](#detection-data-json)
+    - [Packet Transmission](#packet-transmission)
+    - [Example Packet Structure](#example-packet-structure)
+- [Display Module](#client-requirements)
+- [Control Module](#dependencies)
+- [Running the Application](#running-the-application)
+- [Notes](#notes)
 <p align="center">
   <img src="./Assets/concept.jpg" alt="Concept" width="400"/>
   <img src="./Assets/conceptscreen.jpg" alt="Concept Screen" width="380"/>
