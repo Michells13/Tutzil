@@ -82,8 +82,7 @@ The vision module has been developed in Python using the PyTorch framework. Curr
 - **Main Loop**: 
    - In the main function, the camera captures frames, which are processed and analyzed using YOLOv8. The processed results can be send over a network using the TCP/IP server.
 
-     
-## TCP/IP Communication and Packet Transmission
+- **TCP/IP Communication and Packet Transmission**: 
 
 This module includes a TCP/IP communication system for transmitting processed image data and associated metadata between a vision module and a graphical interface module. Below is an overview of the key functions and processes involved:
 
