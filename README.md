@@ -52,8 +52,10 @@ The vision module has been developed in Python using the PyTorch framework. Curr
    - Easy to extend and adapt for new tasks by configuring the `config` dictionary.
 
 - **Main Loop**: 
-   - In the main function, the camera captures frames, which are processed and analyzed using YOLOv8. The processed results can be displayed on the screen or communicated over a network using the TCP/IP server.
+   - In the main function, the camera captures frames, which are processed and analyzed using YOLOv8. The processed results can be send over a network using the TCP/IP server.
 
+     
+- **TCP/IP COMMS**: 
 ### Example Configurations:
 
 - **Mode**: Inference (only)
@@ -71,12 +73,7 @@ The vision module has been developed in Python using the PyTorch framework. Curr
 
 
 
-## Features
 
-- **Object Detection**: Utilizes the YOLOv8 model (different architectures will be added later)for accurate and efficient object detection, pose estimation and segmentation.
-- **Real-Time Tracking**: Tracks detected objects in real-time, ensuring smooth and responsive operation.
-- **User Interface**: A user-friendly interface built with Qt Creator, providing easy control and visualization.
-- **Pan and Tilt Control**: Integrates with a two-degree-of-freedom system for comprehensive tracking capabilities, allowing for precise control over pan (horizontal movement) and tilt (vertical movement) axes.
 
 
 
