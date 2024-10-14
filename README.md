@@ -30,7 +30,7 @@ It is a system that uses computer vision to identify and track targets in real-t
     - [Inputs & Outputs](#inputs--outputs)
     - [Modular Design](#modular-design)
     - [Main Loop](#main-loop)
-    - [TCP/IP COMMS](#tcpip-comms)
+    - [TCP/IP Communication and Packet Transmission](#tcpip-communication-and-packet-transmission)
   - [Example Configurations](#example-configurations)
 - [UI Module](#ui-module)
 - [Control Module](#control-module)
@@ -41,6 +41,7 @@ It is a system that uses computer vision to identify and track targets in real-t
   - [Run the Application](#run-the-application)
 - [Contribution](#contribution)
 - [License](#license)
+
 
 
 ## System Architecture 
