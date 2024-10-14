@@ -15,9 +15,6 @@ It is a system that uses computer vision to identify and track targets in real-t
 
 | Usage Concept                    | Display  First Concept                          
 
-## Objectives
-
-Basically this is an artificial vision system controlling a two-degree-of-freedom robot, where the user selects an object on the screen, and the robotic system autonomously adjusts the camera to accurately point at the chosen object. The primary goal of this project is to create a reliable and efficient tracking assistant that can be used mainly in a security system with a 2 DOF robot but also as a camera stabilizer, the goal of this project is to mount it in a vehicle.
 
 ## System Architecture 
 
@@ -26,6 +23,11 @@ Basically this is an artificial vision system controlling a two-degree-of-freedo
 ## Vision Module - Jetson Orin/Nano
 
 The vision module has been implemented on a separate device to maintain the autonomy of the UI system and to allocate the necessary resources for vision processing independently. Following this model, it will be easier to replace the embedded module with a more powerful system in the future, and it also allows for independent development of both the UI and vision modules.
+
+## UI Module
+ 
+
+## Control Module
 
 ### Frameworks
 
